@@ -1,0 +1,9 @@
+<pre>{{ selectedHero | json }}</pre>
+
+<ul>
+  <li *ngFor="let hero of heroes">
+    <span (click)="onHeroSelected(hero)">
+      <b>{{ hero.name }}</b> - {{ hero.description }}
+    </span>
+  </li>
+</ul>

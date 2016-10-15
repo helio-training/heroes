@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import Hero from '../shared/hero';
 
 @Component({
@@ -8,14 +8,10 @@ import Hero from '../shared/hero';
 })
 export class HeroDetailComponent {
 
+  @Input()
   hero: Hero;
 
   constructor() {
-    this.hero = new Hero('Superman', 'Faster than a speeding bullet');
-  }
 
-  greet(hero: Hero): void {
-    alert(`Yo, ${hero.name} (${hero.description})`);
   }
-
 }

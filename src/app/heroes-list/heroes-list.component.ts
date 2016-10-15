@@ -33,4 +33,7 @@ export class HeroesListComponent implements OnInit {
     this.selectedHero = hero;
   }
 
+  onCloseClicked() {
+    this.selectedHero = null;
+  }
 }

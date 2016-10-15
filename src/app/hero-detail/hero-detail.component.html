@@ -1,15 +1,2 @@
-<p>
-  My favorite hero is: <b>{{ hero.name }}</b>
-</p>
-
-<div>
-  <input type="text" [(ngModel)]="hero.name" placeholder="Name" />
-</div>
-
-<div>
-  <textarea [(ngModel)]="hero.description" placeholder="Description" rows="10"></textarea>
-</div>
-
-<button
-  (click)="greet(hero)">Greet
-</button>
+<h1>{{ hero.name }}</h1>
+<p>{{ hero.description }}</p>

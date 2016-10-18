@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Hero from '../shared/hero';
 import HeroService from '../heroes.service';
+import { Router } from '@angular/router';
 
 /*
  <ul>
@@ -18,7 +19,7 @@ export class HeroesListComponent implements OnInit {
 
   selectedHero: Hero;
 
-  constructor(public heroService: HeroService) {
+  constructor(public heroService: HeroService, public router: Router) {
 
   }
 
@@ -30,7 +31,7 @@ export class HeroesListComponent implements OnInit {
   }
 
   onHeroSelected(hero: Hero) {
-    this.selectedHero = hero;
+    this.router.navigate(['heroes', hero.name]);
   }
 
   onCloseClicked() {

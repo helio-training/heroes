@@ -1,12 +1,6 @@
 <ul>
   <li *ngFor="let hero of heroes">
-    <span (click)="onHeroSelected(hero)">
-      <b>{{ hero.name }}</b> - {{ hero.description }}
-    </span>
+    <b><a (click)="onHeroSelected(hero)">{{ hero.name }}</a></b>
   </li>
 </ul>
 
-<div *ngIf="selectedHero">
-  <hero-detail [hero]="selectedHero"></hero-detail>
-  <button (click)="onCloseClicked()">Close</button>
-</div>

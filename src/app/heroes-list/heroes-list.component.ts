@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Hero from '../shared/hero';
+import HeroService from '../heroes.service';
 
 /*
  <ul>
@@ -17,17 +18,16 @@ export class HeroesListComponent implements OnInit {
 
   selectedHero: Hero;
 
-  constructor() {
-    this.heroes = [
-      new Hero('Superman', 'Faster than a speeding bullet'),
-      new Hero('Batman', 'Afraid of bats'),
-      new Hero('Green Lantern', 'Fear is my enemy'),
-      new Hero('Wonder Woman', 'Invisible plane and a golden lasso'),
-    ];
+  constructor(public heroService: HeroService) {
 
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.heroService.getHeroes()
+        .then(result => {
+          this.heroes = result;
+        });
+  }
 
   onHeroSelected(hero: Hero) {
     this.selectedHero = hero;
